@@ -1,0 +1,16 @@
+#!/bin/bash
+set -e
+export DEBIAN_FRONTEND=noninteractive
+
+echo "═══ Очистка ═══"
+
+apt-get autoremove -y
+apt-get clean
+rm -rf /var/lib/apt/lists/*
+rm -rf /tmp/*
+
+dd if=/dev/zero of=/EMPTY bs=1M 2>/dev/null || true
+rm -f /EMPTY
+sync
+
+echo "Очистка завершена"

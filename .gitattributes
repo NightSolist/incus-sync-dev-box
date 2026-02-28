@@ -1,0 +1,12 @@
+# Shell scripts must use LF
+*.sh text eol=lf
+
+# Packer configs
+*.pkr.hcl text eol=lf
+*.cfg text eol=lf
+
+# Vagrantfile
+Vagrantfile text eol=lf
+
+# Everything else auto
+* text=auto
